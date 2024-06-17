@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Mostrar Datos de API</title>
+    <script>
+        var url = "https://jsonplaceholder.typicode.com/photos";
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                const photosContainer = document.getElementById('photos-container');
+                data.forEach(photo => {
+                    const photoCard = document.createElement('div');
+                    photoCard.classList.add('photo-card');
+
+                    const thumbnail = document.createElement('img');
+                    thumbnail.classList.add('photo-thumbnail');
+                    thumbnail.src = photo.thumbnailUrl;
+
+                    const title = document.createElement('h2');
+                    title.classList.add('photo-title');
+                    title.textContent = photo.title;
+
+                    photoCard.appendChild(thumbnail);
+                    photoCard.appendChild(title);
+                    photosContainer.appendChild(photoCard);
+                });
+            })
+            .catch(error => console.log('Error:', error));
+    </script>
+</head>
+
+<body>
+    <h1>COLORES</h1>
+    <div id="photos-container"></div>
+
+</body>
+
+</html>

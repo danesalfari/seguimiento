@@ -1,0 +1,16 @@
+.photo-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.photo-thumbnail {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.photo-title {
+    font-weight: bold;
+}
